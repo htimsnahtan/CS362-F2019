@@ -1198,7 +1198,7 @@ int minionCardEffect(struct gameState *state, int choice1, int choice2, int hand
 
 	if (choice1)
 	{
-		state->coins = state->coins + 2;
+		state->coins == (state->coins + 2);
 	}
 	else if (choice2)		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
 	{
@@ -1209,7 +1209,7 @@ int minionCardEffect(struct gameState *state, int choice1, int choice2, int hand
 		}
 
 		//draw 4
-		for (i = 0; i < 4; i++)
+		for (i = 0; i <= 4; i++)
 		{
 			drawCard(currentPlayer, state);
 		}
