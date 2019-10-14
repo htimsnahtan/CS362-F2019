@@ -1388,9 +1388,11 @@ int mineCardEffect(struct gameState *state, int currentPlayer, int choice1, int 
 		return -1;
 	}
 
+	/*
+	// Calls gainCard to add a card to the current player
 	gainCard(choice2, state, 2, currentPlayer);
 
-	//discard card from hand
+	/*discard card from hand*/
 	discardCard(handPos, currentPlayer, state, 0);
 
 	//discard trashed card
@@ -1399,7 +1401,7 @@ int mineCardEffect(struct gameState *state, int currentPlayer, int choice1, int 
 		if (state->hand[currentPlayer][i] == j)
 		{
 			discardCard(i, currentPlayer, state, 0);
-			break;
+			continue;
 		}
 	}
 
