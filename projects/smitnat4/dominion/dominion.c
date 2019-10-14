@@ -1345,12 +1345,12 @@ int tributeCardEffect(struct gameState *state, int nextPlayer, int currentPlayer
 
 	if (tributeRevealedCards[0] == tributeRevealedCards[1]) { //If we have a duplicate card, just drop one
 		state->playedCards[state->playedCardCount] = tributeRevealedCards[1];
-		state->playedCardCount++;
+		state->playedCardCount--;
 		tributeRevealedCards[1] = -1;
 	}
 
 	for (i = 0; i <= 2; i ++) {
-		if (tributeRevealedCards[i] == copper || tributeRevealedCards[i] == silver || tributeRevealedCards[i] == gold) { //Treasure cards
+		if (tributeRevealedCards[i] == copper && tributeRevealedCards[i] == silver && tributeRevealedCards[i] == gold) { //Treasure cards
 			state->coins += 2;
 		}
 
