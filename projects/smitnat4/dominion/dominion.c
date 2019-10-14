@@ -1161,7 +1161,6 @@ int baronCardEffect(struct gameState *state, int choice1, int currentPlayer)
 						isGameOver(state);
 					}
 				}
-				card_not_discarded = 0;//Exit the loop
 			}
 
 			else {
@@ -1174,10 +1173,11 @@ int baronCardEffect(struct gameState *state, int choice1, int currentPlayer)
 		if (supplyCount(estate, state) > 0) {
 			gainCard(estate, state, 0, currentPlayer);//Gain an estate
 
-			state->supplyCount[estate]--;//Decrement Estates
 			if (supplyCount(estate, state) == 0) {
 				isGameOver(state);
 			}
+			state->supplyCount[estate]--;//Decrement Estates
+
 		}
 	}
 
