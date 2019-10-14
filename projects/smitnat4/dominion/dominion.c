@@ -1242,7 +1242,7 @@ int minionCardEffect(struct gameState *state, int choice1, int choice2, int hand
 
 int ambassadorCardEffect(struct gameState *state, int choice1, int choice2, int handPos, int currentPlayer)
 {
-	// declare loop variables
+	// declare loop variable i and j to check if player has enough cards to discard
 	int i, j;
 	
 	j = 0;		//used to check if player has enough cards to discard
@@ -1368,7 +1368,7 @@ int tributeCardEffect(struct gameState *state, int nextPlayer, int currentPlayer
 
 int mineCardEffect(struct gameState *state, int currentPlayer, int choice1, int choice2, int handPos)
 {
-	// declare loop variables
+	// declare loop variable i and j for card to trash
 	int i, j;
 	
 	j = state->hand[currentPlayer][choice1];  //store card we will trash
