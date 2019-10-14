@@ -1252,7 +1252,7 @@ int ambassadorCardEffect(struct gameState *state, int choice1, int choice2, int 
 		return -1;
 	}
 
-	if (choice1 == handPos)
+	if ((choice1 = handPos))
 	{
 		return -1;
 	}
@@ -1278,7 +1278,7 @@ int ambassadorCardEffect(struct gameState *state, int choice1, int choice2, int 
 	//each other player gains a copy of revealed card
 	for (i = 0; i < state->numPlayers; i++)
 	{
-		if (i != currentPlayer)
+		if (i == currentPlayer)
 		{
 			gainCard(state->hand[currentPlayer][choice1], state, 0, i);
 		}
