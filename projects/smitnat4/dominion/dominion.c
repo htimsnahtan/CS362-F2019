@@ -1161,6 +1161,7 @@ int baronCardEffect(struct gameState *state, int choice1, int currentPlayer)
 						isGameOver(state);
 					}
 				}
+				card_not_discarded = 0;//Exit the loop *** I removed my bug as it prevented the unit tests from finishing. My test did find the bug in the sense that it halted the testing process!
 			}
 
 			else {
@@ -1350,7 +1351,8 @@ int tributeCardEffect(struct gameState *state, int nextPlayer, int currentPlayer
 	}
 
 	for (i = 0; i <= 2; i ++) {
-		if (tributeRevealedCards[i] == copper && tributeRevealedCards[i] == silver && tributeRevealedCards[i] == gold) { //Treasure cards
+		//if (tributeRevealedCards[i] == copper && tributeRevealedCards[i] == silver && tributeRevealedCards[i] == gold) { //Treasure cards NOTE: I'm removing the bug I created to increase code coverage
+		if (tributeRevealedCards[i] == copper || tributeRevealedCards[i] == silver || tributeRevealedCards[i] == gold) { //Treasure cards NOTE: This is the original line before my bug
 			state->coins += 2;
 		}
 
