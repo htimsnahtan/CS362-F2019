@@ -52,7 +52,7 @@ int main (int argc, char** argv)	{
             G2SmithyCount++;
         }
     }
-	customAssert(G1SmithyCount, G1SmithyCount -1);
+	customAssert(G1SmithyCount, G2SmithyCount -1);
 	// end test 1 ------------------------------------------------------
 	
 	// start test 2 ----------------------------------------------------
