@@ -1161,6 +1161,7 @@ int baronCardEffect(struct gameState *state, int choice1, int currentPlayer)
 						isGameOver(state);
 					}
 				}
+				card_not_discarded = 0;//Exit the loop *** I removed my bug as it prevented the unit tests from finishing. My test did find the bug in the sense that it halted the testing process!
 			}
 
 			else {
